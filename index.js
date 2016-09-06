@@ -1,4 +1,4 @@
-"use strict";
+#! /usr/bin/env node
 
 const clear = require('clear');
 const inquirer = require('inquirer');
