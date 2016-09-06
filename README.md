@@ -7,7 +7,7 @@ $ npm install -g https://github.com/flammenmensch/chrome-manifest-generator.git
 
 ## Example usage
 ```
-$ md my-awesome-extension
-$ cd md
+$ mkdir my-awesome-extension
+$ cd ./my-awesome-extension
 $ chrext
 ```
