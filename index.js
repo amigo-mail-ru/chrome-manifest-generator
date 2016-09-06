@@ -1,8 +1,11 @@
 #! /usr/bin/env node
 
 const clear = require('clear');
+const chalk = require('chalk');
+const figlet = require('figlet');
 const inquirer = require('inquirer');
 const jsonfile = require('jsonfile');
+const pjson = require('./package.json');
 
 const questions = [
   {
@@ -71,6 +74,10 @@ const questions = [
 
 clear();
 
+console.log(
+  chalk.yellow(figlet.textSync('ChrExt ' + pjson.version))
+);
+
 inquirer.prompt(questions).then(function(answers) {
   const json = {
     manifest_version: 2,
@@ -104,9 +111,13 @@ inquirer.prompt(questions).then(function(answers) {
 
   jsonfile.writeFile('manifest.json', json, { spaces: 2 }, function(err) {
     if (err) {
-      console.error('Error creating manifest.json', err);
+      console.error(
+        chalk.red('Error creating manifest.json', err)
+      );
     }
-    console.info('Initialized Chrome extension');
+    console.info(
+      chalk.green('Successfully generated manifest.json')
+    );
   });
 });
 
