@@ -2,7 +2,7 @@
 
 ## Installation
 ```
-$ npm install -g https://github.com/flammenmensch/chrome-manifest-generator.git
+$ npm install -g https://github.com/amigo-mail-ru/chrome-manifest-generator.git
 ```
 
 ## Example usage
